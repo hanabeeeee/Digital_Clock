@@ -10,31 +10,74 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Wallpoet', cursive;
     flex-direction: column;
-    background: #333;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20210119/pngtree-gray-brick-wall-background-wall-tiles-image_535909.jpg);
+    font-family: 'Space Mono', monospace;
 }
 
-h1 {
-    color: rgb(220, 220, 220);
-}
 
 .clock{
-    box-shadow: 8px 8px 8px rgba(255, 201, 53, 0.624),
-    0 0 30px rgb(40, 39, 39) inset;
-    background: rgb(121, 45, 242);
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.624),
+    0 0 30px rgb(170, 170, 170) inset;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+51,f6f6f6+100;White+Gloss+%231 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+
+    color: #333;
     width: 400px;
     height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(85, 72, 238);
-    border-radius: 30px;
     font-size: 55px;
     margin: 10px;
     padding: 20px;
+    position: relative;
+    width: 500px;
+    height: 20vh;
+    margin: 20px 0;
+    border-radius: 50% / 10%;
+    color: white;
+    text-align: center;
+    text-indent: .1em;
+    animation: clock ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+}
+
+.clock:after 
+    {
+        content: '';
+        position: absolute;  
+        width: 20px; height: 20px;  
+        border: 1px solid #999;
+        top: -10px; left: 50%;
+        z-index: 0;
+        border-bottom: none;
+        border-right: none;
+        transform: rotate(45deg);
+    }
+
+    .clock:before{
+        content: '';
+        position: absolute;
+        width: 5px; height: 5px;
+        top: -14px;left: 54%;
+        z-index: 5;
+        border-radius: 50% 50%;
+        background: #000;}
+
+.clock .pm {
+    font-size: 40px;
 }
 
 .clock .container {
     display: flex;
+}
+
+@keyframes clock {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
 }

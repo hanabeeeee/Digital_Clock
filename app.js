@@ -6,6 +6,7 @@ setInterval(function(){
 let h = d.getHours(); //시간
 let m = d.getMinutes(); //분
 let s = d.getSeconds(); //초
+let ampm = h >= 12 ? 'pm' : 'am' ;
 
 // 0~9까지는 앞에 0을 표시
 if(s < 10) {
@@ -18,11 +19,11 @@ if(m < 10) {
 
 //AM, PM 표시
  if(h <= 12) {
-    h = 'AM' + h;
+    let ampm = 'AM';
  }
 
  if (h >= 12) {
-    h = 'PM' + h;
+    let ampm = 'PM';
  }
 
  if (m == 50 + s == 10) {
@@ -38,6 +39,7 @@ if(m < 10) {
 $('.hour').html(h);
 $('.min').html(m);
 $('.sec').html(s);
+$('.pm').html(ampm);
 }, 1000);
 
 })
